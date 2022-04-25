@@ -22,10 +22,23 @@ public class Main {
 
         	if(order == 1) {
 				op.criaConjunto();
-			} else if (order == 2){
+			} else if (order == 2) {
 				op.adicionaNoConjunto();
+			} else if (order == 3) {
+				op.pertencimento();
+			} else if (order == 4) {
+				op.ehSubconjunto();
+			} else if (order == 5) {
+				op.uniao();
+			} else if (order == 6) {
+				op.intersecao();
+			} else if (order == 7) {
+				op.diferenca();
 			} else if (order == 8){
 				op.mostrarConjunto();
+			} else if (order == 9){
+				System.out.println("Fim do programa.");
+				break;
 			}
 		}
     }
