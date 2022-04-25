@@ -1,6 +1,6 @@
 import java.util.*;
 
 public class Conjuntos {
-	public Set<Integer> conjuntinho = new HashSet<Integer>();
+	public Set<Integer> listaConjuntos = new HashSet<Integer>();
 
 }

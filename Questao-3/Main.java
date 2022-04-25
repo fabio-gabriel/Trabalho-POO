@@ -14,7 +14,7 @@ public class Main {
 			System.out.println("5.União de conjuntos.");
 			System.out.println("6.Intersecção de conjuntos.");	
 			System.out.println("7.Diferença de dois conjuntos.");
-			System.out.println("8.Printar.");
+			System.out.println("8.Printar o conjunto.");
 			System.out.println("9.Fim do programa.");
 
 			//Recebe a ordem
