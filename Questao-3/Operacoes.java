@@ -5,7 +5,11 @@ public class Operacoes {
 	
 	ArrayList<Conjuntos> lista = new ArrayList<>();
 
-	int i = 0;
+	private int i = 0;
+
+	public int getI(){
+		return i;
+	}
 
 	public void criaConjunto(){
 		Conjuntos conj = new Conjuntos();
@@ -14,14 +18,7 @@ public class Operacoes {
 		i++;
 	}	
 
-	public void adicionaNoConjunto(){
-		System.out.println("Informe qual é o dígito do conjunto");
-		int localizador = Util.readInt();
-
-		//Verificar se o conjunto existe 
-		if(localizador > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
+	public void adicionaNoConjunto(int localizador){
 				
 		//Adicionar elementos
 		System.out.println("Informe a quantidade de elementos:");
@@ -34,67 +31,22 @@ public class Operacoes {
 		System.out.println("Elementos inseridos.");
 	}
 
-	public void mostrarConjunto(){
-		
-		System.out.println("Informe qual dígito do conjunto");
-		int localizador = Util.readInt();
-		//Verificar se o conjunto existe 
-		if(localizador > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
+	public void mostrarConjunto(int localizador){
 		System.out.println(lista.get(localizador).listaConjuntos);
 	}
 
-	public void pertencimento(){
-		System.out.println("Informe o dígito do conjunto.");
-		int localizador = Util.readInt();
-
-		//Verificar se o conjunto existe 
-		if(localizador > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-		
+	public void pertencimento(int localizador){
 		System.out.println("Digite qual o elemento deseja verificar a pertinência.");
 		int element = Util.readInt();
 		System.out.println("O conjunto " + localizador + " contém o elemento " + element + ": "+ lista.get(localizador).listaConjuntos.contains(element));
-		
 	}
 
-	public void ehSubconjunto(){
-		System.out.println("Informe o dígito do conjunto principal:");
-		int localizador1 = Util.readInt();
-
-		//Verificar se o primeiro conjunto existe 
-		if(localizador1 > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-		
-		System.out.println("Informe o dígito do conjunto secundário, o qual será verificado se é de fato ou não subconjunto:");
-		int localizador2 = Util.readInt();
-		//Verificar se o segundo conjunto existe 
-		if(localizador2 > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-		
+	public void ehSubconjunto(int localizador1, int localizador2){		
 		System.out.println("O conjunto " + localizador2 + " é subconjunto de " + localizador1 + ": " +
 		lista.get(localizador1).listaConjuntos.containsAll(lista.get(localizador2).listaConjuntos));
 	}
 
-	public void uniao(){
-		System.out.println("Informe o dígito do primeiro conjunto");
-		int localizador1 = Util.readInt();
-		//Verificar se o primeiro conjunto existe 
-		if(localizador1 > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-			
-		System.out.println("Informe o dígito do segundo conjunto");
-		int localizador2 = Util.readInt();
-		//Verificar se o segundo conjunto existe 
-		if(localizador2 > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-		
+	public void uniao(int localizador1, int localizador2){
 		//Criar conjunto união
 		Conjuntos conj = new Conjuntos();
 		lista.add(conj);
@@ -104,21 +56,7 @@ public class Operacoes {
 		i++;
 	}
 
-	public void intersecao(){
-		System.out.println("Informe qual dígito do primeiro conjunto.");
-		int localizador1 = Util.readInt();
-		//Verificar se o primeiro conjunto existe 
-		if(localizador1 > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-		
-		System.out.println("Informe qual dígito do segundo conjunto.");
-		int localizador2 = Util.readInt();
-		//Verificar se o segundo conjunto existe 
-		if(localizador2 > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-		
+	public void intersecao(int localizador1, int localizador2){
 		//Criar conjunto de intersecção
 		Conjuntos conj = new Conjuntos();
 		lista.add(conj);
@@ -128,21 +66,7 @@ public class Operacoes {
 		i++;
 	}
 
-	public void diferenca(){
-		System.out.println("Informe qual dígito do primeiro conjunto.");
-		int localizador1 = Util.readInt();
-		//Verificar se o primeiro conjunto existe 
-		if(localizador1 > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-		
-		System.out.println("Informe qual dígito do segundo conjunto.");
-		int localizador2 = Util.readInt();
-		//Verificar se o segundo conjunto existe 
-		if(localizador2 > (i - 1)) {
-			System.out.println("Conjunto inexistente.");
-		}
-		
+	public void diferenca(int localizador1, int localizador2){
 		//Criar conjunto de diferença
 		Conjuntos conj = new Conjuntos();
 		lista.add(conj);
@@ -151,5 +75,16 @@ public class Operacoes {
 		System.out.println("Conjunto de diferença criado. Seu dígito é " + i);
 		i++;
 	}
-}	
 
+	public int pegaConjunto(){
+		System.out.println("Informe o dígito do conjunto.");
+		int local = Util.readInt();
+
+		//Verificar se o conjunto existe 
+		if(local > (i - 1)) {
+			System.out.println("Conjunto inexistente.");
+		}
+		
+		return local;
+	}
+}	

@@ -23,22 +23,89 @@ public class Main {
         	if(order == 1) {
 				op.criaConjunto();
 			} else if (order == 2) {
-				op.adicionaNoConjunto();
+				int localizador = op.pegaConjunto();
+
+				if (localizador > (op.getI() - 1)) {
+					continue;
+				}
+				
+				op.adicionaNoConjunto(localizador);
 			} else if (order == 3) {
-				op.pertencimento();
+				int localizador = op.pegaConjunto();
+
+				if (localizador > (op.getI() - 1)) {
+					continue;
+				}
+				op.pertencimento(localizador);
 			} else if (order == 4) {
-				op.ehSubconjunto();
+				int localizador1 = op.pegaConjunto();
+
+				if (localizador1 > (op.getI() - 1)) {
+					continue;
+				}
+
+				int localizador2 = op.pegaConjunto();
+
+				if (localizador2 > (op.getI() - 1)) {
+					continue;
+				}
+
+				op.ehSubconjunto(localizador1, localizador2);
 			} else if (order == 5) {
-				op.uniao();
+				int localizador1 = op.pegaConjunto();
+
+				if (localizador1 > (op.getI() - 1)) {
+					continue;
+				}
+
+				int localizador2 = op.pegaConjunto();
+
+				if (localizador2 > (op.getI() - 1)) {
+					continue;
+				}
+
+				op.uniao(localizador1, localizador2);
 			} else if (order == 6) {
-				op.intersecao();
+				int localizador1 = op.pegaConjunto();
+
+				if (localizador1 > (op.getI() - 1)) {
+					continue;
+				}
+
+				int localizador2 = op.pegaConjunto();
+
+				if (localizador2 > (op.getI() - 1)) {
+					continue;
+				}
+
+				op.intersecao(localizador1, localizador2);
 			} else if (order == 7) {
-				op.diferenca();
+				int localizador1 = op.pegaConjunto();
+
+				if (localizador1 > (op.getI() - 1)) {
+					continue;
+				}
+
+				int localizador2 = op.pegaConjunto();
+
+				if (localizador2 > (op.getI() - 1)) {
+					continue;
+				}
+
+				op.diferenca(localizador1, localizador2);
 			} else if (order == 8){
-				op.mostrarConjunto();
+				int localizador = op.pegaConjunto();
+
+				if (localizador > (op.getI() - 1)) {
+					continue;
+				}
+
+				op.mostrarConjunto(localizador);
 			} else if (order == 9){
 				System.out.println("Fim do programa.");
 				break;
+			} else {
+				System.out.println("Comando inválido");
 			}
 		}
     }
